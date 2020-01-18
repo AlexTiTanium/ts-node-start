@@ -1,0 +1,38 @@
+{
+    "name": "ts-node-start",
+    "version": "0.0.0",
+    "description": "A starting point for Node.js + TypeScript",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AlexTiTanium/ts-node-start"
+    },
+    "author": "Alex Kucherenko",
+    "license": "MIT",
+    "scripts": {
+        "start": "npm run serve",
+        "build": "npm run build-ts && npm run lint",
+        "serve": "node dist/application.js",
+        "watch-node": "nodemon dist/server.js",
+        "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
+        "test": "jest --forceExit --coverage --verbose",
+        "watch-test": "npm run test -- --watchAll",
+        "build-ts": "tsc",
+        "watch-ts": "tsc -w",
+        "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
+        "debug": "npm run build && npm run watch-debug",
+        "serve-debug": "nodemon --inspect dist/application.js",
+        "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\""
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@types/jest": "^24.9.0",
+        "@types/node": "^13.1.8",
+        "@typescript-eslint/eslint-plugin": "^2.16.0",
+        "@typescript-eslint/parser": "^2.16.0",
+        "concurrently": "^5.0.2",
+        "eslint": "^6.8.0",
+        "jest": "^24.9.0",
+        "nodemon": "^2.0.2",
+        "typescript": "^3.7.5"
+    }
+}
