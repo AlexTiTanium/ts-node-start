@@ -10,6 +10,7 @@
     "license": "MIT",
     "scripts": {
         "start": "npm run serve",
+        "benchmarks": "ts-node benchmarks",
         "build": "npm run build-ts && npm run lint",
         "serve": "node dist/application.js",
         "watch-node": "nodemon dist/server.js",
@@ -25,14 +26,17 @@
     },
     "dependencies": {},
     "devDependencies": {
+        "@types/benchmark": "^1.0.31",
         "@types/jest": "^24.9.0",
         "@types/node": "^13.1.8",
         "@typescript-eslint/eslint-plugin": "^2.16.0",
         "@typescript-eslint/parser": "^2.16.0",
+        "benchmark": "^2.1.4",
         "concurrently": "^5.0.2",
         "eslint": "^6.8.0",
         "jest": "^24.9.0",
         "nodemon": "^2.0.2",
+        "ts-node": "^8.6.2",
         "typescript": "^3.7.5"
     }
 }
